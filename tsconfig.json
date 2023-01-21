@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "compiled",
+    "target": "ES6",
+    "rootDir": "source",
+    "strict": true,
+    "removeComments": true,
+    "moduleResolution": "node"
+  }
+}

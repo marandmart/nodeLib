@@ -1,0 +1,29 @@
+{
+  "name": "nodejslib",
+  "version": "1.0.0",
+  "description": "a library that process markdown files",
+  "main": "compiled/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "g": "npx tsc && node compiled/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marandmart/nodeLib.git"
+  },
+  "author": "mario andre martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marandmart/nodeLib/issues"
+  },
+  "homepage": "https://github.com/marandmart/nodeLib#readme",
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "chalk": "^5.0.1",
+    "concurrently": "^7.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
