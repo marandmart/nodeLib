@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "g": "npx tsc && node compiled/index.js"
+    "cexe": "npx tsc && node compiled/cli.js",
+    "exe": "node compiled/cli.js",
+    "exe:validate": "node compiled/cli.js ./files/texto.md --validate"
   },
   "repository": {
     "type": "git",

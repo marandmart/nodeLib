@@ -12,9 +12,6 @@ import { readFile } from "fs/promises";
 const errorTreatment = (error) => {
     throw new Error(chalk.red(error.message));
 };
-const showsContent = (content) => {
-    console.log(chalk.green(content));
-};
 const linkExtractor = (text) => {
     const regex = /\[([^[\]]*?)]\((https?:\/\/[^\s?#.]*[^\s]*)\)/gm;
     const matches = [...text.matchAll(regex)].map((link) => ({
@@ -23,21 +20,14 @@ const linkExtractor = (text) => {
     }));
     return matches;
 };
-const getFile = (path) => __awaiter(void 0, void 0, void 0, function* () {
+export const getFile = (path) => __awaiter(void 0, void 0, void 0, function* () {
     const encoding = "utf-8";
     try {
         const text = yield readFile(path, encoding);
-        showsContent(text);
         const links = linkExtractor(text);
-        links.map((item) => console.log(chalk.blue(`${item.title} - ${item.url}`)));
+        return links;
     }
     catch (error) {
-        if (typeof error === "object") {
-            errorTreatment(error);
-        }
-        else {
-            console.error(error);
-        }
+        errorTreatment(error);
     }
 });
-getFile("./files/texto.md");
